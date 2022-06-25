@@ -9,7 +9,7 @@ var tier1_style: StyleBoxTexture = null
 var ItemClass = preload("res://Inventory/Item.tscn")
 var item = null
 var new_item = null
-
+var slot_index
 
 func _ready():
 	
