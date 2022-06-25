@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UserInterface.gd" type="Script" id=2]
+
+[node name="UserInterface" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Inventory" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 221, 13 )

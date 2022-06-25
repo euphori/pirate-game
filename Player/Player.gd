@@ -11,8 +11,15 @@ export var MAX_HEALTH = 100
 
 var UP = Vector2(0,-1)
 var motion = Vector2.ZERO
+var current_weapon = null
 
+onready var weapon_position = $WeaponPosition
 onready var state_machine = $AnimationTree.get("parameters/playback")
+onready var sabre = preload("res://Weapons/Sabre.tscn")
+onready var pickup_zone = $PickupZone
+
+func _ready():
+	instance_weapon(sabre)
 
 func _physics_process(delta):
 	
@@ -22,6 +29,7 @@ func _physics_process(delta):
 	input_vector = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	flip()
+	
 	
 	if input_vector != 0:
 		state_machine.travel("walk")
@@ -46,10 +54,33 @@ func _physics_process(delta):
 	
 	motion = move_and_slide(motion, UP)
 
+
 func flip():
 	var direction = sign(get_global_mouse_position().x - global_position.x)
 	if direction < 0:
 		$Sprite.set_flip_h(true)
+		weapon_position_update()
+		weapon_position.position.x = 10
 		
 	else:
 		$Sprite.set_flip_h(false)
+		weapon_position_update()
+		weapon_position.position.x = 23
+
+		
+func instance_weapon(weaponName):
+	var weapon = weaponName.instance()
+	add_child(weapon)
+	current_weapon = weapon
+	weapon.global_position = weapon_position.global_position
+
+func weapon_position_update():
+	if current_weapon != null:
+		current_weapon.global_position = weapon_position.global_position
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if pickup_zone.items_in_range.size() > 0:
+			var pickup_item = pickup_zone.items_in_range.values()[0]
+			pickup_item.pick_up_item(self)
+			pickup_zone.items_in_range.erase(pickup_item)

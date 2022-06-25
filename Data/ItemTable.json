@@ -1,0 +1,26 @@
+{
+  "Sabre": {
+    "ItemCategory": "Weapon",
+    "WeaponCategory": "Sword",
+    "ItemAttack": 90,
+    "ItemDefense": 0,
+    "StackSize": 1,
+    "Description": "a normal looking pirate sword"
+  },
+  "Flintlock Pistol": {
+    "ItemCategory": "Weapon",
+    "WeaponCategory": "Pistol",
+    "ItemAttack": 50,
+    "ItemDefense": 0,
+    "StackSize": 1,
+    "Description": "wierd looking gun"
+  },
+  "Orange": {
+    "ItemCategory": "Consumable",
+    "WeaponCategory": null,
+    "ItemAttack": null,
+    "ItemDefense": null,
+    "StackSize": 99,
+    "Description": "orange"
+  }
+}

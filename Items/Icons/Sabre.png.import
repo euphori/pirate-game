@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pistol.png-4bc20628829699aea8fee997768b0156.stex"
+path="res://.import/Sabre.png-17311b6bef5fd40f2dcf215c63cfadca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weapons/pistol.png"
-dest_files=[ "res://.import/pistol.png-4bc20628829699aea8fee997768b0156.stex" ]
+source_file="res://Items/Icons/Sabre.png"
+dest_files=[ "res://.import/Sabre.png-17311b6bef5fd40f2dcf215c63cfadca.stex" ]
 
 [params]
 

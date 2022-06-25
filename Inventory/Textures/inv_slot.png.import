@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sabre.png-a2114674f86a68ffee9b4fa97716a448.stex"
+path="res://.import/inv_slot.png-69181149a20fae019404de52e40aa821.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weapons/sabre.png"
-dest_files=[ "res://.import/sabre.png-a2114674f86a68ffee9b4fa97716a448.stex" ]
+source_file="res://Inventory/Textures/inv_slot.png"
+dest_files=[ "res://.import/inv_slot.png-69181149a20fae019404de52e40aa821.stex" ]
 
 [params]
 

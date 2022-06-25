@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Props/chest.png" type="Texture" id=1]
+[ext_resource path="res://Areas/PlayerDetection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Props/Chest.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 7.5 )
+
+[node name="Chest" type="StaticBody2D"]
+z_index = -2
+collision_layer = 32
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 17, 23.5 )
+shape = SubResource( 1 )
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 2 )]
+position = Vector2( 17, 20 )
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]
