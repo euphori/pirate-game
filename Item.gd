@@ -2,9 +2,11 @@ extends Node2D
 
 var item_name
 var item_quantity
+var item_holder
 
 onready var texture_rect = $TextureRect
 onready var label = $Label
+
 
 #func _ready():
 #	randomize()
@@ -25,11 +27,10 @@ onready var label = $Label
 #	else:
 #		label.text = String(item_quantity)
 		
-func set_item(nm , qt):
+func set_item(nm , qt, ih):
 	item_name = nm
 	item_quantity = qt
-	print(item_quantity)
-	print(item_name)
+	item_holder = ih
 	texture_rect.texture = load("res://Items/Icons/" + item_name + ".png")
 	var stack_size = int(JsonData.item_data[item_name]["StackSize"])
 	if stack_size == 1: 

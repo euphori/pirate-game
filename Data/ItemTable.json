@@ -5,7 +5,8 @@
     "ItemAttack": 90,
     "ItemDefense": 0,
     "StackSize": 1,
-    "Description": "a normal looking pirate sword"
+    "Description": "a normal looking pirate sword",
+    "Value": 200
   },
   "Flintlock Pistol": {
     "ItemCategory": "Weapon",
@@ -13,7 +14,8 @@
     "ItemAttack": 50,
     "ItemDefense": 0,
     "StackSize": 1,
-    "Description": "wierd looking gun"
+    "Description": "wierd looking gun",
+    "Value": 100
   },
   "Orange": {
     "ItemCategory": "Consumable",
@@ -21,6 +23,7 @@
     "ItemAttack": null,
     "ItemDefense": null,
     "StackSize": 99,
-    "Description": "orange"
+    "Description": "orange",
+    "Value": 50
   }
 }

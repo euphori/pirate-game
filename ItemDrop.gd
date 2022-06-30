@@ -10,10 +10,14 @@ var being_picked_up = false
 
 
 onready var player = get_node("/root/World/Player")
-
+onready var sprite = $Sprite
 
 func _ready():
-	item_name = "Orange"
+	randomize()
+	var options = ["Orange","Flintlock Pistol", "Sabre"]
+	var rand_index:int = randi() % options.size()
+	item_name = options[rand_index]
+	sprite.texture = load("res://Items/Icons/" + item_name + ".png")
 
 
 func _physics_process(delta):

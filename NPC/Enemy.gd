@@ -61,7 +61,6 @@ func _physics_process(delta):
 				state = pick_random_state([IDLE,WANDER])
 				wander_controller.set_wander_timer(rand_range(1,9))
 				
-			
 			var direction = global_position.direction_to(wander_controller.target_position)
 			motion = motion.move_toward(direction * MAX_SPEED, ACCELERATION * delta )
 			
@@ -94,7 +93,7 @@ func _on_PlayerDetection_body_entered(body):
 
 
 func _on_Hurtbox_area_entered(area):
-	print("AW")
+	state = CHASE
 	health -= 10
 	if health <= 0:
 		queue_free()

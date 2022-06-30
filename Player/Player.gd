@@ -17,6 +17,7 @@ onready var weapon_position = $WeaponPosition
 onready var state_machine = $AnimationTree.get("parameters/playback")
 onready var sabre = preload("res://Weapons/Sabre.tscn")
 onready var pickup_zone = $PickupZone
+onready var hat = $Sprite/Hat
 
 func _ready():
 	instance_weapon(sabre)
@@ -29,7 +30,6 @@ func _physics_process(delta):
 	input_vector = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	flip()
-	
 	
 	if input_vector != 0:
 		state_machine.travel("walk")
@@ -59,13 +59,15 @@ func flip():
 	var direction = sign(get_global_mouse_position().x - global_position.x)
 	if direction < 0:
 		$Sprite.set_flip_h(true)
+		hat.set_flip_h(true)
 		weapon_position_update()
-		weapon_position.position.x = 10
+		weapon_position.position.x = -8
 		
 	else:
 		$Sprite.set_flip_h(false)
+		hat.set_flip_h(false)
 		weapon_position_update()
-		weapon_position.position.x = 23
+		weapon_position.position.x = 7
 
 		
 func instance_weapon(weaponName):

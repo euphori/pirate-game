@@ -1,8 +1,7 @@
 extends Node2D
 
 const SlotClass = preload("res://Inventory/Slot.gd")
-onready var inventory_slots = $GridContainer
-
+onready var inventory_slots = $ScrollContainer/GridContainer
 var holding_item = null
 
 
@@ -11,13 +10,14 @@ func _ready():
 	for i in range(slots.size()):
 		slots[i].connect("gui_input", self, "slot_gui_input", [slots[i]])
 		slots[i].slot_index = i
+		slots[i].inventory_name = "Inventory"
 	initialize_inventory()
 
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):
 		if PlayerInventory.inventory.has(i):
-			slots[i].initialize_item(PlayerInventory.inventory[i][0], PlayerInventory.inventory[i][1])
+			slots[i].initialize_item(PlayerInventory.inventory[i][0], PlayerInventory.inventory[i][1], "player")
 
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
@@ -70,7 +70,6 @@ func left_click_same_item(slot: SlotClass):
 
 func left_click_not_holding_item(slot: SlotClass):
 	PlayerInventory.remove_item(slot)
-	
 	holding_item = slot.item
 	slot.pick_from_slot()
 	holding_item.global_position = get_global_mouse_position()

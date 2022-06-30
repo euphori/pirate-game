@@ -14,6 +14,7 @@ radius = 8.0
 height = 10.0
 
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 4
 script = ExtResource( 3 )
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 2 )]

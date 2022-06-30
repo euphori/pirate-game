@@ -1,0 +1,349 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Island/island props.png" type="Texture" id=1]
+[ext_resource path="res://Island/port.png" type="Texture" id=2]
+[ext_resource path="res://Island/island_rocks.png" type="Texture" id=3]
+[ext_resource path="res://Island/sand.png" type="Texture" id=4]
+[ext_resource path="res://Island/island_trees.png" type="Texture" id=5]
+[ext_resource path="res://Island/shack.png" type="Texture" id=6]
+[ext_resource path="res://Island/shopkeep.png" type="Texture" id=7]
+[ext_resource path="res://Island/tavern.png" type="Texture" id=8]
+[ext_resource path="res://Water.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Ship/Ship.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Camera2D.gd" type="Script" id=12]
+[ext_resource path="res://Island/bounty papers.png" type="Texture" id=13]
+[ext_resource path="res://Island/Shopkeeper.gd" type="Script" id=14]
+[ext_resource path="res://UI/InteractLabel.tscn" type="PackedScene" id=15]
+[ext_resource path="res://NPC/SpeechBubble.tscn" type="PackedScene" id=16]
+[ext_resource path="res://UI/TradeUI.tscn" type="PackedScene" id=17]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 78, 2.5 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "island_trees.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 144 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "island_trees.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 80, 32, 80, 112 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="TileSet" id=4]
+0/name = "island_rocks.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 216, 168, 424, 200 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "island_rocks.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 8, 16, 208, 192 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "island_rocks.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 8, 272, 168, 88 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 24.0208
+
+[sub_resource type="TileSet" id=1]
+0/name = "island props.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 16, 0, 48, 80 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "island props.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 80, 16, 80, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "island props.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 160, 0, 64, 80 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "island props.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 16, 96, 48, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "island props.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 64, 80, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+6/name = "island props.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 128, 80, 16, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "island props.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 96, 80, 24, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "island props.png 8"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 96, 96, 24, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 223, 3 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 316.375, 11.5 )
+
+[node name="World" type="Node2D"]
+
+[node name="Shop" type="StaticBody2D" parent="."]
+
+[node name="Shack" type="Sprite" parent="Shop"]
+position = Vector2( 648, -44 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+position = Vector2( 481, -22.5 )
+z_index = 1
+z_as_relative = false
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="Trees" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 4, 4 )
+format = 1
+tile_data = PoolIntArray( -2359003, 0, 0, -2293561, 0, 0, -2293530, 0, 0, -2293519, 0, 0, -1769262, 1, 0, -1769160, 1, 0 )
+
+[node name="Rocks" type="TileMap" parent="."]
+z_index = -3
+tile_set = SubResource( 4 )
+cell_size = Vector2( 2, 2 )
+format = 1
+tile_data = PoolIntArray( -6290997, 1, 0, -2883012, 2, 0, -2621298, 0, 0 )
+
+[node name="Shopkeeper" type="Area2D" parent="."]
+position = Vector2( 449, -45 )
+script = ExtResource( 14 )
+
+[node name="Shopkeep" type="Sprite" parent="Shopkeeper"]
+texture = ExtResource( 7 )
+
+[node name="InteractLabel" parent="Shopkeeper" instance=ExtResource( 15 )]
+visible = false
+margin_left = -38.0
+margin_top = -19.0
+margin_right = -38.0
+margin_bottom = -19.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper"]
+position = Vector2( 1, -6 )
+shape = SubResource( 7 )
+
+[node name="SpeechBubble" parent="Shopkeeper" instance=ExtResource( 16 )]
+visible = false
+margin_left = -3.0
+margin_top = -38.0
+margin_right = 37.0
+margin_bottom = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Shopkeeper"]
+
+[node name="TradeUI" parent="Shopkeeper/CanvasLayer" instance=ExtResource( 17 )]
+visible = false
+
+[node name="Props" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 2, 2 )
+format = 1
+tile_data = PoolIntArray( -2555570, 2, 0, -2489914, 0, 0, -2031237, 1, 0, -1900310, 4, 0, -1900301, 6, 0, -1900273, 7, 0, -1834741, 6, 0, -1834733, 6, 0, -1638242, 6, 0, -1376041, 3, 0, -1376016, 8, 0, -1113958, 6, 0, -1113951, 6, 0, -589659, 8, 0 )
+
+[node name="BountyPapers" type="Sprite" parent="Props"]
+position = Vector2( 664, -46 )
+texture = ExtResource( 13 )
+
+[node name="Port" type="StaticBody2D" parent="."]
+z_index = 2
+
+[node name="Port" type="Sprite" parent="Port"]
+position = Vector2( 277, -76 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 386, 31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Port"]
+position = Vector2( 472, 2 )
+shape = SubResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 669, -45 )
+
+[node name="Sand" type="Sprite" parent="StaticBody2D"]
+z_index = 5
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 338.375, 57.5 )
+shape = SubResource( 6 )
+
+[node name="Tavern" type="StaticBody2D" parent="."]
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tavern"]
+
+[node name="Sprite" type="Sprite" parent="Tavern"]
+position = Vector2( 856, -96 )
+texture = ExtResource( 8 )
+offset = Vector2( -142, 51 )
+
+[node name="Ship" parent="." instance=ExtResource( 11 )]
+position = Vector2( 169, -39 )
+z_index = 2
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 264, -13 )
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 6, -65 )
+current = true
+script = ExtResource( 12 )
+
+[node name="Water" parent="." instance=ExtResource( 9 )]
+position = Vector2( 429, 87 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 18 )]
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
+position = Vector2( 3, 32 )
+
+[connection signal="body_entered" from="Shopkeeper" to="Shopkeeper" method="_on_Shopkeeper_body_entered"]
+[connection signal="body_exited" from="Shopkeeper" to="Shopkeeper" method="_on_Shopkeeper_body_exited"]
+
+[editable path="ParallaxBackground"]

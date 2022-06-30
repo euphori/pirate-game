@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 29.0172
+radius = 59.0762
 
 [node name="PlayerDetection" type="Area2D"]
 collision_layer = 0

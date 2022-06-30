@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Water/2d_simple_water.gdshader" type="Shader" id=1]
+[ext_resource path="res://Water/Ground.png" type="Texture" id=2]
+[ext_resource path="res://Water/wave.png" type="Texture" id=3]
+[ext_resource path="res://Water/wave2.png" type="Texture" id=4]
+[ext_resource path="res://Water/noise_texture.tres" type="Texture" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/bg = ExtResource( 2 )
+shader_param/wave1 = ExtResource( 3 )
+shader_param/wave2 = ExtResource( 4 )
+shader_param/noise = ExtResource( 5 )
+
+[node name="Water" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.333333, 0.392157, 0.721569, 1 )
+material = SubResource( 1 )
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 58.0
+margin_bottom = 29.0
+color = Color( 0.337255, 0.435294, 0.819608, 1 )

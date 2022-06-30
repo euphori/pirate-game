@@ -126,7 +126,6 @@ radius = 12.0
 [sub_resource type="CapsuleShape2D" id=4]
 
 [node name="Sabre" type="StaticBody2D"]
-position = Vector2( 16, 16 )
 z_index = -1
 script = ExtResource( 2 )
 
